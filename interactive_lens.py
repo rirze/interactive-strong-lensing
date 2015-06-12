@@ -11,7 +11,7 @@ import lensdemo_funcs as ldf
 from matplotlib.widgets import Slider
 
 fig, ax = plt.subplots()
-plt.subplots_adjust(left=0.25, bottom=0.45)
+plt.subplots_adjust(bottom=0.45)
 # Package some image display preferences in a dictionary object, for use below:
 myargs = {'interpolation': 'nearest', 'origin': 'lower', 'cmap': cm.spectral}
 #myargs = {'interpolation': 'nearest', 'origin': 'lower', 'cmap': cm.gray}
@@ -62,11 +62,16 @@ sgxcen = Slider(ax, 'Gaussian X-center', -1.5, 1.5, valinit=g_xcen)
 ax = plt.axes([0.25,0.30,0.65,0.03])
 sgycen = Slider(ax, 'Gaussian Y-center', -1.5, 1.5, valinit=g_ycen)
 
+ax = plt.axes([0.25,0.35,0.65,0.03])
+sgsig = Slider(ax, 'Gaussian Sigma', 0.01, 1, valinit=g_sig)
+
+
 def update(val):
     g_axrat = sgaxrat.val
     g_xcen = sgxcen.val
     g_ycen = sgycen.val
     g_pa = sgpa.val 
+    g_sig = sgsig.val
     l_axrat = slaxrat.val
 
     gpar = np.asarray([g_amp, g_sig, g_xcen, g_ycen, g_axrat, g_pa])
@@ -83,5 +88,6 @@ sgaxrat.on_changed(update)
 sgycen.on_changed(update)
 sgxcen.on_changed(update)
 sgpa.on_changed(update)
+sgsig.on_changed(update)
 
 plt.show()
