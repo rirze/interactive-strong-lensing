@@ -5,6 +5,9 @@ This is a demonstration of how different parameters change the image we see from
 To run the demonstration, execute the file 'interactive_lens.py' with the file 'lensdemo_funcs.py' being in the same directory.
 
 ## Screenshots
+###Einstein Ring
 ![Einstein Ring](images/ring.png "Einstein Ring")
+###Einstein Cross
 ![Einstein Cross](images/cross.png "Einstein Cross")
-![Others](images/extra.png "Interesting configuration by playing around with parameters...")
+###Others...
+![Others](images/extra1.png "Interesting configuration by playing around with parameters...")
