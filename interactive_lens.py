@@ -90,4 +90,4 @@ sgxcen.on_changed(update)
 sgpa.on_changed(update)
 sgsig.on_changed(update)
 
-plt.show()
+plt.show(block=True)
